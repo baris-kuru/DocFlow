@@ -1,0 +1,16 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+python-dotenv>=1.0.0
+pydantic>=2.7.0
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+python-docx>=1.1.0
+openpyxl>=3.1.0
+PyMuPDF>=1.24.0
+reportlab>=4.0
+pillow>=10.0
+# Optional (heavy): high-accuracy PDF/DOCX parsing + OCR. The agent falls back
+# to PyMuPDF/python-docx when docling is not installed.
+# docling>=2.0.0

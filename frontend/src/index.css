@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 22% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 8%;
+    --primary: 207 58% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 18% 95%;
+    --secondary-foreground: 215 20% 14%;
+    --muted: 210 18% 95%;
+    --muted-foreground: 215 9% 45%;
+    --accent: 205 24% 92%;
+    --accent-foreground: 207 58% 26%;
+    --border: 214 18% 88%;
+    --input: 214 18% 88%;
+    --ring: 207 58% 34%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 12% 6%;
+    --foreground: 240 6% 95%;
+    --card: 240 10% 9%;
+    --card-foreground: 240 6% 95%;
+    --primary: 198 85% 62%;
+    --primary-foreground: 240 12% 6%;
+    --secondary: 240 6% 14%;
+    --secondary-foreground: 240 6% 92%;
+    --muted: 240 6% 14%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 198 48% 18%;
+    --accent-foreground: 190 80% 82%;
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 198 85% 62%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  html, body, #root { height: 100%; margin: 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.4); }
+
+/* Brand text */
+.gradient-text {
+  color: hsl(var(--primary));
+}
+
+/* Blinking caret for streaming */
+.caret::after {
+  content: "▋";
+  margin-left: 1px;
+  animation: blink 1s steps(2, start) infinite;
+  color: hsl(var(--primary));
+}
+@keyframes blink { to { visibility: hidden; } }
+
+/* Markdown */
+.md p { margin: 0.35rem 0; line-height: 1.6; }
+.md ul, .md ol { margin: 0.4rem 0; padding-left: 1.2rem; }
+.md li { margin: 0.15rem 0; }
+.md h1, .md h2, .md h3 { font-weight: 700; margin: 0.6rem 0 0.3rem; }
+.md code { background: hsl(var(--muted)); padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.85em; }
+.md pre { background: hsl(var(--muted)); padding: 0.7rem; border-radius: 8px; overflow-x: auto; }
+.md a { color: hsl(var(--primary)); text-decoration: underline; font-weight: 600; }
+.md table { border-collapse: collapse; margin: 0.5rem 0; font-size: 0.85em; }
+.md th, .md td { border: 1px solid hsl(var(--border)); padding: 0.3rem 0.5rem; }

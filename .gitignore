@@ -1,0 +1,45 @@
+# venvs / deps
+.venv/
+venv/
+env/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# builds
+dist/
+build/
+.next/
+out/
+*.egg-info/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# os / editor
+.DS_Store
+*.log
+.ipynb_checkpoints/
+
+# broader venv / db / secrets (added)
+.venv*/
+*venv*/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.p12
+credentials/
+secrets/
+*.session
+
+tmp_img*.png
+tmp_*.png
